@@ -4,7 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   entry: {
     main: './app/index.js',
-    vendor2: 'moment'
+    // vendor2: 'moment' @__1
   },
   output: {
     filename: '[chunkhash].[name].js',
@@ -17,8 +17,16 @@ module.exports = {
     }]
   },
   plugins: [
-  new webpack.optimize.CommonsChunkPlugin({
-    name: 'vendor2'
-  })
+    // new webpack.optimize.CommonsChunkPlugin({
+    //   name: 'vendor2' @__1
+    // })
   ]
 }
+
+/*
+
+ 1. @__1 两处的名字要一样？
+
+
+
+ */
