@@ -18,14 +18,18 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-        name: 'vendor' // Specify the common bundle's name.
+        name: 'vendor2' // Specify the common bundle's name.
     })
   ]
 }
 
 /*
 
- CommonsChunk 里不仅包含了库，还包含了webpack的环境
+  CommonsChunk
+    1. 肯定包含webpack的运行时
+    2. 编译时查看入口里有没有和 name 设置项同名的入口key值
+      a. 有的话把webpack运行环境和同名入口文件打包在一起
+      b. 没有的话，则只打包webpack运行时
 
  */
 
