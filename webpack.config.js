@@ -7,7 +7,7 @@ module.exports = {
     vendor: 'moment'
   },
   output: {
-    filename: '[chunkhash].[name].js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {
@@ -15,9 +15,17 @@ module.exports = {
       test: /\.css$/, // 不能加引号
       use: ['style-loader','css-loader']
     }]
-  }
+  },
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+        name: 'vendor' // Specify the common bundle's name.
+    })
+  ]
 }
 
 /*
-  main 里面也有 moment，因为 moment 是 main 的依赖, 而每个入口文件都会包含自己的依赖
+
+ CommonsChunk 里不仅包含了库，还包含了webpack的环境
+
  */
+
