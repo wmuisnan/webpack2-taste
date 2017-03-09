@@ -1,4 +1,5 @@
-require.ensure([], function(require) {
-  var foo = require("moment");
-  console.log(foo);
-}, "custom-chunk-name");
+require('./a');
+require.ensure(['./b'], function(require){
+    require('./c');
+    console.log('done!');
+});
