@@ -17,15 +17,16 @@ module.exports = {
     }]
   },
   plugins: [
-    // new webpack.optimize.CommonsChunkPlugin({
-    //   name: 'vendor2' @__1
-    // })
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor' // @__1
+    })
   ]
 }
 
 /*
 
  1. @__1 两处的名字要一样？
+ 2. 删掉一处好像没影响?
 
 
 
