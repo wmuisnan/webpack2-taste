@@ -5,7 +5,7 @@ import '../css/theme.css';
 // var moment = require('moment');
 // console.log(moment().format());
 
-console.log(Date.now())
+console.log(Date.now(), '~~')
 
 function component () {
   var element = document.createElement('div');
