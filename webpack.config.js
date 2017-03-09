@@ -3,7 +3,7 @@ var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   entry: {
-    main: './app/index-es2017.js',
+    main: './app/index.js',
     // vendor: 'moment'
   },
   output: {
@@ -41,8 +41,9 @@ module.exports = {
 
 /*
 
-  1. import() as a split-point
-  2. babel, modules: false, 'syntax-dynamic-import'
-  3. publicPath: 'dist/'
+  import supersedes require.ensure
+  用 import 替代 require.ensure，
+    好处： 可以处理模块加载失败的情况(基于Promise)
+    缺点： require.ensure 支持 第三个参数，(require.ensure([], fn, name), 重命名?)
 
  */

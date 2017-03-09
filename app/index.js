@@ -1,11 +1,4 @@
-console.log('~~~')
-
-function determineDate() {
-  import('moment').then(function(moment) {
-    console.log(moment().format());
-  }).catch(function(err) {
-    console.log('Failed to load moment', err);
-  });
-}
-
-determineDate();
+require.ensure([], function(require) {
+  var foo = require("moment");
+  console.log(foo);
+}, "custom-chunk-name");
