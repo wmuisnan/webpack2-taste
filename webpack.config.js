@@ -26,7 +26,12 @@ module.exports = {
               }
             ]
           ],
-          plugins: ['syntax-dynamic-import']
+          plugins: [
+            'syntax-dynamic-import',
+            'transform-async-to-generator',
+            'transform-regenerator',
+            'transform-runtime'
+          ]
         }
       }]
     }]

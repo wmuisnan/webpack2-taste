@@ -1,8 +1,6 @@
-function determineDate() {
-  import('moment')
-    .then(moment => moment().format('LLLL'))
-    .then(str => console.log(str))
-    .catch(err => console.log('Failed to load moment', err));
+async function determineDate() {
+  const moment = await import('moment');
+  return moment().format('LLLL');
 }
 
-determineDate();
+determineDate().then(str => console.log(str));
