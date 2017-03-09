@@ -1,19 +1,11 @@
-// import _ from 'lodash';
-import '../css/theme.css';
+console.log('~~~')
 
-
-// var moment = require('moment');
-// console.log(moment().format());
-
-console.log(Date.now(), '~~')
-
-function component () {
-  var element = document.createElement('div');
-
-  /* lodash is required for the next line to work */
-  element.innerHTML = 'Hello webpack'  //_.join(['Hello','webpack'], ' ');
-
-  return element;
+function determineDate() {
+  import('moment').then(function(moment) {
+    console.log(moment().format());
+  }).catch(function(err) {
+    console.log('Failed to load moment', err);
+  });
 }
 
-document.body.appendChild(component());
+determineDate();
