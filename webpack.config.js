@@ -11,5 +11,12 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     publicPath: 'dist/',
     pathinfo: true // 注释， 模块路径
-  }
+  },
+  devtool: "source-map",
+  plugins:[
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: options.devtool && (options.devtool.indexOf("sourcemap") >= 0 || options.devtool.indexOf("source-map") >= 0)
+    })
+  ]
+
 }
