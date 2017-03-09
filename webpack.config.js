@@ -10,6 +10,6 @@ module.exports = {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
     publicPath: 'dist/',
-    pathinfo: true
+    pathinfo: true // 注释， 模块路径
   }
 }
